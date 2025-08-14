@@ -1,13 +1,21 @@
-import DynamicForm from '@/components/DynamicForm'
-import formSchema from '@/lib/schema'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import TwoStepForm from "./components/TwoStepForm";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="max-w-lg w-full bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-2xl font-bold mb-4">Udyam Registration (Step 1 & 2)</h1>
-        <DynamicForm schema={formSchema} />
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
+root.render(
+  <React.StrictMode>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
+        <h1 className="text-2xl font-bold text-center mb-6">
+          Udyam Registration Clone
+        </h1>
+        <TwoStepForm />
       </div>
-    </main>
-  )
-}
+    </div>
+  </React.StrictMode>
+);
